@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var subjectObject = {
+  "1": {
+    "CSE": ["JAVA", "MATHS", "PYTHON", "ENGLISH"],
+    "ECE": ["CIRCUITS", "WIRES", "RESISTORS"],
+    "MECH": ["Variables", "Operators", "Functions", "Conditions"]    
+  },
+  "2": {
+    "CSE": ["HTML", "OSD", "MATHS", "ENGLISH"],
+    "ECE": ["Borders", "Margins", "Backgrounds", "Float"],
+    "BT": ["Variables", "Operators", "Functions", "Conditions"]    
+  },
+  
+  "3": {
+    "CSE": ["JAVA", "MATHS", "PYTHON", "HTML"],
+    "ECE": ["CIRCUITS", "WIRES", "RESISTORS"],
+    "BT": ["Variables", "Operators", "Functions", "Conditions"]    
+  }
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav-right {
+  float: LEFT;}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.card{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 3%;
+  width: 400px;
+  height: 300px;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border:20px solid black;
+}
+
+
+select{
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  border: 3px solid #000;
+}
+.button{
+  text-align: center;
+  display: block;
+  padding: 10px;
+  margin-top: 30PX;
+}
+.buttonInput{
+  border: 3px solid #000;
+  background-color: #fff;
+  width: 100px;
+  border-radius: 30px;
+}
+
+</style>
+</head>
+<Body background="/C:\Users\hp\OneDrive\Desktop\project11\66666.jpg">    
+
+<ul>
+  <li><a class="active" href="C:\Users\hp\OneDrive\Desktop\project11\login.html">LOGOUT</a></li>
+  <li><a href="schedule.html">EXAM DATES</a></li>
+  <li><a href="file:///C:/Users/hp/OneDrive/Desktop/project11/ABOUT.HTML">ABOUT</a></li>
+  <li><a href="#about">HOME</a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  <li><a href="#about"></a></li>
+  
+  <div class="topnav-right">
+ QUESTION PAPER GENERATOR</a>
+</div>
+</ul>
+<div class="card">
+  <form  name="form1" id="form1" action="/action_page.php">
+  <div class="a" style="font-family:Showcard Gothic;">YEAR: <br><select name="subject" id="subject"><br></div><br>
+      <option value="text" selected="selected">Select Year</option>
+    </select>
+    <br><br>
+  BRANCH: <select name="topic" id="topic">
+      <option value="text" selected="selected">Please select branch first</option>
+    </select>
+    <br><br>
+  <div class='x'>SUBJECT: <select name="chapter" id="chapter" value="select subject"></div>
+      <option value="text" selected="selected">Please select topic first</option>
+    </select>
+   <div class="button">
+    <input class="buttonInput" type="button" onclick="window.location.href='C:\Users\hp\OneDrive\Desktop\project11\questionpaper.html'"; value="SUBMIT"/>
+       </div>
+  </form>
+</div>
+
+</html>
+
+
